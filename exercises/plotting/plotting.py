@@ -69,3 +69,30 @@ s = sin(x)
 c = cos(x)
 
 img = imread('dc_metro.JPG')
+
+close('all')
+
+# Figure 1
+subplot(2, 2, 1)
+#plot(x, s)
+#plot(x, c, 'rx')
+plot(x, s, 'b-', x, c, 'r+')
+axis('tight')
+
+# Figure 2
+subplot(2, 2, 2)
+plot(x, s)
+grid()
+title('sin(x)')
+xlabel('radians')
+ylabel('amplitude')
+axis('tight')
+
+# Figure 3
+subplot(2, 2, 3)
+imshow(img, cmap=cm.winter, extent=[-10, 10, -10, 10])
+
+tight_layout()
+savefig('my_plots.pdf', bbox_inches='tight')
+show()
+
